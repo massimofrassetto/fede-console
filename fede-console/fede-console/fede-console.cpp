@@ -2,8 +2,9 @@
 // 
 // *** NOTA IMPORTANTE ***
 // Per evitare problemi tra il compilatore e la funzione "scanf" è stato necessario modificare le impostazioni al preprocessore.
+// LA PROCEDURA È DA RIPETERE PER TUTTE LE CONFIGURAZIONI DI COMPILAZIONE!!
 // Di seguito i passi applicati:
-//  - Progetto > Proprieta' [nome_progetto] > C/C++ > Preprocessore
+//  - Progetto > Proprieta' [nome_progetto] > C/C++ > Definizioni Preprocessore
 //  - Aggiungere la stringa "_CRT_SECURE_NO_WARNINGS" in fondo (usare ";" per dividere gli argomenti).
 // // ********************
 //
@@ -27,29 +28,58 @@ int main() {
     double bar_increment = 0.01;
     int bar_increment_time_ms = 50;
 
-    bool exitFedeconsole = false;
+    bool exitFedeConsole = false;
+    bool codeAdminVerified = false;
 
     printf(MSG_IDLE);
     scanf("%c", &gen_imput);
     printf("\n");
     printf(MSG_STARTING);
     printf("\n");
-    // emulateProgressBar(bar_width, bar_increment, bar_increment_time_ms);
+    emulateProgressBar(bar_width, bar_increment, bar_increment_time_ms);
     printf("\n");
     printf(MSG_READY);
-    while (!exitFedeconsole) {
+    while (!exitFedeConsole) {
         printf("\n\n");
+        printf(MSG_SEPARATOR_LINE);
         printf(MSG_WAITING_COMMAND);
+        fflush(stdin);
         scanf("%s", &fede_command);
         if (strcmp(fede_command, COMMAND_HELP) == 0) {
-            printf(MSG_COMMAND_HELP);
+            helperHeaderline();
+            printf("  %s\t\t%s", COMMAND_HELP,         MSG_HELPER_COMMAND_H);
+            printf("\n\n");
+            printf("  %s\t%s",   COMMAND_CODE_REQUEST, MSG_HELPER_COMMAND_C);
+            printf("\n\n");
+            printf("  %s\t\t%s", COMMAND_EXIT,         MSG_HELPER_COMMAND_E);
+            printf("\n\n");
+            //printf(MSG_COMMAND_HELP);
         }
         else if (strcmp(fede_command, COMMAND_CODE_REQUEST) == 0) {
+            printf("\n");
             printf(MSG_COMMAND_CODE_REQUEST);
+            codeAdminVerified = false;
+            while (!codeAdminVerified && !(strcmp(fede_command, COMMAND_CODE_QUIT) == 0)) {
+                scanf("%s", &fede_command);
+                if (strcmp(fede_command, DEFAULT_CODE_ADMIN) == 0) {
+                    codeAdminVerified = true;
+                    printf("\n");
+                    printf(MSG_COMMAND_CODE_ACCEPTED, DEFAULT_CODE_CHECK);
+                }
+                else if (strcmp(fede_command, COMMAND_CODE_QUIT) == 0) {
+                    printf("\n");
+                    printf(MSG_COMMAND_CODE_QUIT);
+                }
+                else {
+                    printf("\n");
+                    printf(MSG_COMMAND_CODE_DENIED);
+                }
+            }
         }
         else if (strcmp(fede_command, COMMAND_EXIT) == 0) {
-            exitFedeconsole = true;
+            exitFedeConsole = true;
             printf(MSG_COMMAND_EXIT);
+            scanf("%c", &gen_imput);
             scanf("%c", &gen_imput);
         }
         else {

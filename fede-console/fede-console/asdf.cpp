@@ -3,11 +3,9 @@
 //===========[ Da mettere nel file "c" ]===================================================================
 
 #ifdef DEBUG
-
-void scriviMonitor() {
-    printf("ciaaaaaaaaaaaaaaao\n");
-}
-
+    void scriviMonitor() {
+        printf("ciaaaaaaaaaaaaaaao\n");
+    }
 #endif // DEBUG
 
 void emulateProgressBar(int barWidth, float increment, int time_load) {
@@ -33,3 +31,14 @@ void emulateProgressBar(int barWidth, float increment, int time_load) {
     }
     printf("\n");
 }
+
+void helperHeaderline() {
+    printf("\n");
+    printf("  COMMAND\tDESCRIPTION");
+    printf("\n\n");
+}
+
+//void helperCommandSection(char command[], int dim_command, char description[], int dim_description) {
+//    printf("%s\t\t%s", );
+//
+//}
