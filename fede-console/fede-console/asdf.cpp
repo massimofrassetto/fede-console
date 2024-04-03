@@ -8,6 +8,16 @@
     }
 #endif // DEBUG
 
+void logoPrint() {
+    printf("\n");
+    printf(MSG_LOGO_LINE_0);
+    printf(MSG_LOGO_LINE_1);
+    printf(MSG_LOGO_LINE_2);
+    printf(MSG_LOGO_LINE_3);
+    printf(MSG_LOGO_LINE_4);
+    printf("\n");
+}
+
 void emulateProgressBar(int barWidth, float increment, int time_load) {
     // int barWidth = 70;
     // float increment = 0.01;

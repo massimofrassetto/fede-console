@@ -9,7 +9,7 @@
 // // ********************
 //
 
-#define DEBUG
+// #define DEBUG
 
 //#include <iostream>
 #include <windows.h>
@@ -33,6 +33,7 @@ int main() {
 
     printf(MSG_IDLE);
     scanf("%c", &gen_imput);
+    logoPrint();
     printf("\n");
     printf(MSG_STARTING);
     printf("\n");
