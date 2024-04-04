@@ -18,6 +18,22 @@ void logoPrint() {
     printf("\n");
 }
 
+void creditsPrint() {
+    printf("\n");
+    printf(MSG_CREDITS_BORDERS);
+    printf("\n\n");
+    printf(MSG_CREDITS_LINE_0);
+    printf(MSG_CREDITS_LINE_1);
+    printf(MSG_CREDITS_LINE_2);
+    printf(MSG_CREDITS_LINE_3);
+    printf(MSG_CREDITS_LINE_4);
+    printf(MSG_CREDITS_LINE_5);
+    printf(MSG_CREDITS_LINE_6);
+    printf("\n\n");
+    printf(MSG_CREDITS_BORDERS);
+    printf("\n");
+}
+
 void emulateProgressBar(int barWidth, float increment, int time_load) {
     // int barWidth = 70;
     // float increment = 0.01;
@@ -42,26 +58,38 @@ void emulateProgressBar(int barWidth, float increment, int time_load) {
     printf("\n");
 }
 
-void helperHeaderline() {
+void helperHeaderline(int header_type) {
     printf("\n");
-    printf("  COMMAND\tDESCRIPTION");
+    if (header_type == MSG_HELPER_TYPE_CMD) {
+        printf("  COMMAND\tDESCRIPTION");
+    }
+    else if (header_type == MSG_HELPER_TYPE_PROT) {
+        printf("  PROTOCOL\tDESCRIPTION");
+    }
+    else {
+        printf(MSG_HELPER_ERROR_HEADER, header_type);
+    }
     printf("\n\n");
 }
-
 
 void protocolCodeRequest(char (*protocol_name)[DIM_PROTOCOL], char (*protocol_code)[DIM_CODE], char (*protocol_check_code)[DIM_CODE]) {
     char user_command[DIM_COMMAND]{};
     bool protocolCodeVerified = false;
 
     printf("\n");
-    printf("Richiesta codice di controllo:");
+    printf(MSG_PROTOCOL_ACCEPTED);
     while (!protocolCodeVerified && !(strcmp(user_command, COMMAND_CODE_QUIT) == 0)) {
-
+        printf("\n");
+        printf(MSG_PROTOCOL_CODE_SEC_USER_REQ, *protocol_name, COMMAND_CODE_QUIT);
         scanf("%s", &user_command);
         if (strcmp(user_command, *protocol_code) == 0) {
             protocolCodeVerified = true;
+            protocolCodeVerified = true;
             printf("\n");
-            printf(MSG_COMMAND_CODE_ACCEPTED, *protocol_name, *protocol_check_code);
+            printf(MSG_PROTOCOL_CODE_SEC_ACCEPTED, *protocol_name, *protocol_check_code);
+            printf("\n\n");
+            printf(MSG_PROTOCOL_AUTOMATIC_RETURN);
+            printf("\n");
         }
         else if (strcmp(user_command, COMMAND_CODE_QUIT) == 0) {
             printf("\n");
@@ -69,7 +97,7 @@ void protocolCodeRequest(char (*protocol_name)[DIM_PROTOCOL], char (*protocol_co
         }
         else {
             printf("\n");
-            printf(MSG_COMMAND_CODE_DENIED);
+            printf(MSG_PROTOCOL_CODE_SEC_DENIED);
         }
     }
     *user_command = ' ';
