@@ -48,6 +48,33 @@ void helperHeaderline() {
     printf("\n\n");
 }
 
+
+void protocolCodeRequest(char (*protocol_name)[DIM_PROTOCOL], char (*protocol_code)[DIM_CODE], char (*protocol_check_code)[DIM_CODE]) {
+    char user_command[DIM_COMMAND]{};
+    bool protocolCodeVerified = false;
+
+    printf("\n");
+    printf("Richiesta codice di controllo:");
+    while (!protocolCodeVerified && !(strcmp(user_command, COMMAND_CODE_QUIT) == 0)) {
+
+        scanf("%s", &user_command);
+        if (strcmp(user_command, *protocol_code) == 0) {
+            protocolCodeVerified = true;
+            printf("\n");
+            printf(MSG_COMMAND_CODE_ACCEPTED, *protocol_name, *protocol_check_code);
+        }
+        else if (strcmp(user_command, COMMAND_CODE_QUIT) == 0) {
+            printf("\n");
+            printf(MSG_COMMAND_CODE_QUIT);
+        }
+        else {
+            printf("\n");
+            printf(MSG_COMMAND_CODE_DENIED);
+        }
+    }
+    *user_command = ' ';
+}
+
 //void helperCommandSection(char command[], int dim_command, char description[], int dim_description) {
 //    printf("%s\t\t%s", );
 //
