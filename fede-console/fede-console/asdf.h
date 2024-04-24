@@ -31,13 +31,13 @@
 #define PROTOCOL_CHESS                   "SCACCHI"
 #define PROTOCOL_SONG                    "CANZONE"
 
-#define PROTOCOL_RIDDLE_CODE_SEC         "AB"				// In attesa di marconi
+#define PROTOCOL_RIDDLE_CODE_SEC         "7BYEG4"
 #define PROTOCOL_RIDDLE_CODE_CHECK       "4s74"
-#define PROTOCOL_CRUCIVERBA_CODE_SEC     "DE"				// In attesa di rachele
+#define PROTOCOL_CRUCIVERBA_CODE_SEC     "NAH"
 #define PROTOCOL_CRUCIVERBA_CODE_CHECK   "r10n"
-#define PROTOCOL_CHESS_CODE_SEC          "HI"				// In attesa di sangiorgi
+#define PROTOCOL_CHESS_CODE_SEC          "TORREF1"
 #define PROTOCOL_CHESS_CODE_CHECK        "f4sk"
-#define PROTOCOL_SONG_CODE_SEC           "credente"
+#define PROTOCOL_SONG_CODE_SEC           "CREDENTE"
 #define PROTOCOL_SONG_CODE_CHECK         "1f0"
 
 #define MSG_IDLE                         "[Press enter to boot console.]"
@@ -52,46 +52,66 @@ enum MSG_HELPER_TYPE {
 	MSG_HELPER_TYPE_PROT,                 // 1 - Protocols
 };
 
-#define MSG_HELPER_ERROR_HEADER          "[ERROR] Tipologia header %i non trovata! Verificare codice. "
+#define MSG_HELPER_ERROR_HEADER          "[ERROR] Header type %i not found! Verify code."
 
-#define MSG_HELPER_COMMAND_H             "Elenco dei comandi disponibili e la relativa descrizione."
-#define MSG_HELPER_COMMAND_C             "Comando per accedere ai moduli di richiesta dei codici di controllo alfanumerici dei singoli protocolli."
-#define MSG_HELPER_COMMAND_P             "Elenco dei protocolli disponibili."
-#define MSG_HELPER_COMMAND_CREDITS       "Info sui creatori."
-#define MSG_HELPER_COMMAND_E             "Termina la console."
-#define MSG_HELPER_NOTE_GENERAL          "----\n! ATTENZIONE !\tLa console e' Case Sensitive.\n\tTutti i COMANDI sono in minuscolo e tutti i codici di SICUREZZA sono in maiuscolo."
+// #define MSG_HELPER_COMMAND_H          "Elenco dei comandi disponibili e la relativa descrizione."
+#define MSG_HELPER_COMMAND_H             "List of available commands and their description."
+// #define MSG_HELPER_COMMAND_C          "Comando per accedere ai moduli di richiesta dei codici di controllo alfanumerici dei singoli protocolli."
+#define MSG_HELPER_COMMAND_C             "Commande pour acceder aux formulaires de demande de code de controle alphanumerique des differents protocoles."
+// #define MSG_HELPER_COMMAND_P          "Elenco dei protocolli disponibili."
+#define MSG_HELPER_COMMAND_P             "Index available protocols."
+// #define MSG_HELPER_COMMAND_CREDITS    "Info sui creatori."
+#define MSG_HELPER_COMMAND_CREDITS       "A proposito dei creatori."
+// #define MSG_HELPER_COMMAND_E          "Termina la console."
+#define MSG_HELPER_COMMAND_E             "'FINISC IT!' (la console)."
+// #define MSG_HELPER_NOTE_GENERAL       "----\n! ATTENZIONE !\n\tLa console e' Case Sensitive.\n\tTutti i COMANDI sono in minuscolo e tutti i codici di SICUREZZA sono in maiuscolo."
+#define MSG_HELPER_NOTE_GENERAL          "----\n! ATTENZIONE !\n\tLa console e' Case Sensitive.\n\tTutti i COMANDI sono in minuscolo e tutti i codici di SICUREZZA sono in maiuscolo."
 
+// #define MSG_HELPER_PROT_RIDDLE        "Il protocollo consiste nel rispondere correttamente ad una serie di domande di 'cultura generale'."
 #define MSG_HELPER_PROT_RIDDLE           "Il protocollo consiste nel rispondere correttamente ad una serie di domande di 'cultura generale'."
+// #define MSG_HELPER_PROT_CRUCIVERBA    "Il protocollo consiste nel risolvere un cruciverba. Attenzione ad alcune caselle!"
 #define MSG_HELPER_PROT_CRUCIVERBA       "Il protocollo consiste nel risolvere un cruciverba. Attenzione ad alcune caselle!"
+// #define MSG_HELPER_PROT_CHESS         "Il protocollo consiste nel rispondere correttamente ad una certa situazione sulla scacchiera."
 #define MSG_HELPER_PROT_CHESS            "Il protocollo consiste nel rispondere correttamente ad una certa situazione sulla scacchiera."
-#define MSG_HELPER_PROT_SONG             "Il protocollo consiste nel cantare interamente una canzone, già tradotta professionalmente, e indovinandone il nome."
+// #define MSG_HELPER_PROT_SONG          "Il protocollo consiste nel cantare interamente una canzone, gia' tradotta professionalmente, e indovinandone il nome."
+#define MSG_HELPER_PROT_SONG             "Il protocollo consiste nel cantare interamente una canzone, gia' tradotta professionalmente, e indovinandone il nome."
 
-#define MSG_COMMAND_CODE_REQUEST         "Avviata procedura per la richiesta dei codici di controllo."
-#define MSG_PROTOCOL_ACCEPTED            "Protocollo richiesto presente nel sistema."
-#define MSG_PROTOCOL_USER_REQ            "Inserire il PROTOCOLLO desiderato ('%s' per annullare): "
-#define MSG_PROTOCOL_DENIED              "[ERROR] Protocollo non presente nel sistema. Richiesta NEGATA!"
+// #define MSG_COMMAND_CODE_REQUEST      "Avviata procedura per la richiesta dei codici di controllo."
+#define MSG_COMMAND_CODE_REQUEST         "Procedure for requesting control codes started."
+// #define MSG_PROTOCOL_ACCEPTED         "Protocollo richiesto presente nel sistema."
+#define MSG_PROTOCOL_ACCEPTED            "Protocol rechi presont dan le sistem."
+// #define MSG_PROTOCOL_USER_REQ         "Inserire il PROTOCOLLO desiderato ('%s' per annullare): "
+#define MSG_PROTOCOL_USER_REQ            "Enter the desired PROTOCOL ('%s' to cancel): "
+// #define MSG_PROTOCOL_DENIED           "[ERROR] Protocollo non presente nel sistema. Richiesta NEGATA!"
+#define MSG_PROTOCOL_DENIED              "[ERROR] AHO! Protocollum systematis non adest. Petitio negavit!"
 
-#define MSG_PROTOCOL_CODE_SEC_USER_REQ   "Inserire codice di SICUREZZA per il protocollo '%s' ('%s' per annullare): "
+//#define MSG_PROTOCOL_CODE_SEC_USER_REQ "Inserire codice di SICUREZZA per il protocollo '%s' ('%s' per annullare): "
+#define MSG_PROTOCOL_CODE_SEC_USER_REQ   "Enter the security code for the AGREEMENT '%s' ('%s' to cancel): "
+//#define MSG_PROTOCOL_CODE_SEC_ACCEPTED "Codice di sicurezza per il protocollo %s verificato con successo.\n\tDi seguito il codice di controllo relativo: \t[ %s ]"
 #define MSG_PROTOCOL_CODE_SEC_ACCEPTED   "Codice di sicurezza per il protocollo %s verificato con successo.\n\tDi seguito il codice di controllo relativo: \t[ %s ]"
-#define MSG_PROTOCOL_CODE_SEC_DENIED     "[ERROR] Codice di sicurezza errato! Provare nuovamente."
-#define MSG_PROTOCOL_AUTOMATIC_RETURN    "Ritorno automaticamente al menu precedente..."
+// #define MSG_PROTOCOL_CODE_SEC_DENIED  "[ERROR] Codice di sicurezza errato! Provare nuovamente."
+#define MSG_PROTOCOL_CODE_SEC_DENIED     "[ERROR] Incorrect security code! Trai aghen."
+// #define MSG_PROTOCOL_AUTOMATIC_RETURN "Ritorno automaticamente al menu precedente..."
+#define MSG_PROTOCOL_AUTOMATIC_RETURN    "Otomaticli retorn to ze privious meniuu"
 
 
-#define MSG_COMMAND_CODE_DENIED          "[ERROR] Codice di controllo non presente nel sistema!\nInserire codice di controllo del protocollo richiesto: "
+// #define MSG_COMMAND_EXIT              "Console terminata con successo!\nPremere enter per chiudere la finestra."
 #define MSG_COMMAND_EXIT                 "Console terminata con successo!\nPremere enter per chiudere la finestra."
-#define MSG_COMMAND_DEFAULT              "[ERROR] Comando non riconosciuto. Richiesta NEGATA!"
+// #define MSG_COMMAND_DEFAULT           "[ERROR] Comando non riconosciuto. Richiesta NEGATA!"
+#define MSG_COMMAND_DEFAULT              "[ERROR] AHO! Mandatum non agnoscitur. Petitio negavit!"
 
-#define MSG_COMMAND_CODE_QUIT            "Richiesta annullata dall'utente. Ritorno al menu precedente..."
+// #define MSG_COMMAND_CODE_QUIT         "Richiesta annullata dall'utente. Ritorno al menu precedente..."
+#define MSG_COMMAND_CODE_QUIT            "Request canceled by user. Return to previous menu..."
 
 // NON TRADURRE LA SEZIONE DEI CREDITS
-#define MSG_CREDITS_BORDERS                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-#define MSG_CREDITS_LINE_0                  "\tConsole creata da Frassetto Massimo in data 01/04/2024.\n"
-#define MSG_CREDITS_LINE_1                  "\tL'applicazione e' stata creata per festeggiare la Laurea di Federica Bugnoli.\n"
-#define MSG_CREDITS_LINE_2                  "\tI Ringraziamenti vanno a\n"
-#define MSG_CREDITS_LINE_3                  "\t\t - Bartolini Rachele\n"
-#define MSG_CREDITS_LINE_4                  "\t\t - Marconi Silvia\n"
-#define MSG_CREDITS_LINE_5                  "\t\t - Sangiorgi Silvia\n"
-#define MSG_CREDITS_LINE_6                  "\tPer aver testato il programma e consigliato."
+#define MSG_CREDITS_BORDERS              "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+#define MSG_CREDITS_LINE_0               "\tConsole creata da Frassetto Massimo in data 01/04/2024.\n"
+#define MSG_CREDITS_LINE_1               "\tL'applicazione e' stata creata per festeggiare la Laurea di Federica Bugnoli.\n"
+#define MSG_CREDITS_LINE_2               "\tI Ringraziamenti vanno a\n"
+#define MSG_CREDITS_LINE_3               "\t\t - Bartolini Rachele\n"
+#define MSG_CREDITS_LINE_4               "\t\t - Marconi Silvia\n"
+#define MSG_CREDITS_LINE_5               "\t\t - Sangiorgi Silvia\n"
+#define MSG_CREDITS_LINE_6               "\tPer aver testato il programma e consigliato."
 
 
 #ifdef DEBUG
@@ -103,3 +123,11 @@ void creditsPrint();
 void emulateProgressBar(int barWidth, float increment, int time_load);
 void helperHeaderline(int type);
 void protocolCodeRequest(char (*protocol_name)[DIM_PROTOCOL], char (*protocol_code)[DIM_CODE], char (*protocol_check_code)[DIM_CODE]);
+
+
+
+
+
+
+// #define MSG_COMMAND_CODE_DENIED       "[ERROR] Codice di controllo non presente nel sistema!\nInserire codice di controllo del protocollo richiesto: "
+// #define MSG_COMMAND_CODE_DENIED       "[ERROR] Code de contrôle non présent dans le système!\nEntrez le code de vérification du protocole requis: "
